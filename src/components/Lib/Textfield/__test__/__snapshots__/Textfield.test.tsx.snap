@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Textfield should render properly 1`] = `
+.c0 {
+  position: relative;
+}
+
+.c2 {
+  position: absolute;
+  font-size: 1rem;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  color: gray;
+  padding: 0 0.3rem;
+  margin: 0 0.5rem;
+  transition: 0.1s ease-out;
+  transform-origin: left top;
+  pointer-events: none;
+}
+
+.c1 {
+  font-size: 1rem;
+  outline: none;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 0.5rem 0.7rem;
+  color: gray;
+  transition: 0.1s ease-out;
+}
+
+.c1:focus {
+  border-color: #6200ee;
+}
+
+.c1:focus+label {
+  color: #6200ee;
+  top: 0;
+  transform: translateY(-50%) scale(0.9);
+}
+
+.c1:not(:placeholder-shown)+label {
+  top: 0;
+  transform: translateY(-50%) scale(0.9);
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <input
+      class="c1"
+      name="Dummy"
+      placeholder="dummy placeholder"
+      type="text"
+      value=""
+    />
+    <label
+      class="c2"
+    >
+      Dummy
+    </label>
+  </div>
+</div>
+`;
