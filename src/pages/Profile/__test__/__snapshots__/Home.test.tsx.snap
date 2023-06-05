@@ -1,0 +1,190 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home should render properly 1`] = `
+.c1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.c2 {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.c4 {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 2rem;
+}
+
+.c5 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.c10 {
+  display: flex;
+  flex-direction: column;
+}
+
+.c9 {
+  display: inline-block;
+  outline: 0;
+  cursor: pointer;
+  text-align: center;
+  border: 0;
+  padding: 7px 16px;
+  min-height: 36px;
+  min-width: 36px;
+  color: #ffffff;
+  background: #008060;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px,rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
+}
+
+.c9 :hover {
+  background: #006e52;
+}
+
+.c3 {
+  margin: 0;
+  color: inherit;
+  font-size: 2.4rem;
+  font-weight: 400;
+  letter-spacing: -0.04rem;
+  line-height: 3.2rem;
+  text-align: initial;
+}
+
+.c6 {
+  position: relative;
+}
+
+.c8 {
+  position: absolute;
+  font-size: 1rem;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  color: gray;
+  padding: 0 0.3rem;
+  margin: 0 0.5rem;
+  transition: 0.1s ease-out;
+  transform-origin: left top;
+  pointer-events: none;
+}
+
+.c7 {
+  font-size: 1rem;
+  outline: none;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 0.5rem 0.7rem;
+  color: gray;
+  transition: 0.1s ease-out;
+}
+
+.c7:focus {
+  border-color: #6200ee;
+}
+
+.c7:focus+label {
+  color: #6200ee;
+  top: 0;
+  transform: translateY(-50%) scale(0.9);
+}
+
+.c7:not(:placeholder-shown)+label {
+  top: 0;
+  transform: translateY(-50%) scale(0.9);
+}
+
+.c0 {
+  overflow: auto;
+  padding-top: 32px;
+  width: 86%;
+  margin: auto;
+}
+
+<div>
+  <main
+    class="c0"
+  >
+    <div
+      class="c1"
+      display="flex"
+      flexdirection="column"
+      gap="2rem"
+      justifycontent="space-between"
+    >
+      <div
+        class="c2"
+        flexdirection="column"
+        gap="3rem"
+      >
+        <h3
+          class="c3"
+          textalign="initial"
+          textcolor="inherit"
+          textvariant="h3"
+        >
+          line1
+        </h3>
+        <div
+          alignitems="start"
+          class="c4"
+          flexdirection="column"
+          gap="2rem"
+        >
+          <div
+            class="c5"
+            flexwrap="wrap"
+            gap="1rem"
+          >
+            <div
+              class="c6"
+            >
+              <input
+                class="c7"
+                name=""
+                placeholder="Enter "
+                type="text"
+              />
+              <label
+                class="c8"
+              />
+            </div>
+          </div>
+          <button
+            class="c9"
+            type="button"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+      <div
+        class="c10"
+        flexdirection="column"
+      >
+        <h3
+          class="c3"
+          textalign="initial"
+          textcolor="inherit"
+          textvariant="h3"
+        >
+          line2
+        </h3>
+      </div>
+    </div>
+  </main>
+</div>
+`;
