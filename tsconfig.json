@@ -13,8 +13,6 @@
             "@pages/*": ["pages/*"],
             "@routes": ["routes"],
             "@routes/*": ["routes/*"],
-            "@store": ["store"],
-            "@store/*": ["store/*"],
             "@constant": ["constant"],
             "@constant/*": ["constant/*"],
             "@utils": ["utils"],

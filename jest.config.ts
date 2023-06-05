@@ -16,10 +16,8 @@ export default {
         '<rootDir>/src/**/*.(ts|tsx)',
         '!<rootDir>/**/main.(ts|tsx)',
         '!<rootDir>/**/index.(ts|tsx)',
-        '!<rootDir>/**/i18n.(ts|tsx)',
         '!<rootDir>/src/App.tsx',
         '!<rootDir>/src/theme/**',
-        '!<rootDir>/src/store/sagas.ts',
         '!<rootDir>/node_modules/**',
         '!<rootDir>/src/**/types.(ts|tsx)',
         '!<rootDir>/src/**/types/**',
@@ -35,7 +33,6 @@ export default {
     verbose: true,
     moduleNameMapper: {
         '\\.(css|less|xsl)$': '<rootDir>/tests/styleMock.ts',
-        '^@store(.*)$': '<rootDir>/src/store$1',
         '^@test-utils': '<rootDir>/src/utils/test-utils',
         '^@components(.*)$': '<rootDir>/src/components$1',
         '^@Lib(.*)$': '<rootDir>/src/components/Lib$1',
