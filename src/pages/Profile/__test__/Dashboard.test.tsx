@@ -1,9 +1,9 @@
-import { renderWithStore } from '@test-utils';
-import { Dashboard } from '../Profile';
+import { render } from '@test-utils';
+import { Profile } from '../Profile';
 
-describe('Dashboard', () => {
+describe('Profile', () => {
     it('should render properly', () => {
-        const { container } = renderWithStore(<Dashboard />);
+        const { container } = render(<Profile />);
         expect(container).toMatchSnapshot();
     });
 });

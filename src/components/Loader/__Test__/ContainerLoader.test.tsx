@@ -1,9 +1,9 @@
 import { render, screen } from '@test-utils';
-import { ContainerLoader } from '../Loader';
+import { Loader } from '../Loader';
 
-describe('ContainerLoader', () => {
+describe('Loader', () => {
     it('should render properly', () => {
-        const { container } = render(<ContainerLoader />);
+        const { container } = render(<Loader />);
         expect(container).toMatchSnapshot();
         expect(screen.getByTitle('loader')).toBeInTheDocument();
     });

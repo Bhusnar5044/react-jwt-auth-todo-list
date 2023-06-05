@@ -11,4 +11,5 @@ export interface Props extends InputWrapperProps {
     type?: string;
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
     placeholder?: string;
+    disabled?: boolean;
 }

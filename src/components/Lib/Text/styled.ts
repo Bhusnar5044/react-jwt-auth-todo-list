@@ -11,7 +11,7 @@ const lineThrough = () => css`
     text-decoration: line-through;
 `;
 const getTextStyle = (props: TextProps) => {
-    const { textColor, textVariant, textWeight, textalign } = props,
+    const { textColor, textVariant, textWeight, textAlign } = props,
         { defaults, weights, variants } = theme.font,
         { fontSize, fontWeight, lineHeight, letterSpacing } = variants[textVariant || defaults.variant];
 
@@ -22,7 +22,7 @@ const getTextStyle = (props: TextProps) => {
         font-weight: ${weights[textWeight || fontWeight]};
         letter-spacing: ${letterSpacing};
         line-height: ${lineHeight};
-        text-align: ${textalign};
+        text-align: ${textAlign};
     `;
 };
 

@@ -5,7 +5,7 @@ import { Props } from './types';
 export const TodoItem: FC<Props> = memo(({ taskId, task, setTasks }) => {
     function removeTask() {
         setTasks((tasks) => {
-            return tasks.filter((taskItem, taskIndex) => taskIndex !== taskId);
+            return tasks.filter((_, taskIndex) => taskIndex !== taskId);
         });
     }
 

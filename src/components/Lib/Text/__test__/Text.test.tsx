@@ -19,7 +19,7 @@ describe('Text', () => {
 
     it('should render properly with provided style props', () => {
         render(
-            <Text textColor="red" textalign="center">
+            <Text textColor="red" textAlign="center">
                 Dummy Text
             </Text>,
         );

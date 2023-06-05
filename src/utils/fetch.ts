@@ -1,7 +1,6 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 
 export interface AxiosReturn {
-    data: any;
     response?: AxiosResponse<any>;
     error?: AxiosResponse<any>;
 }

@@ -1,9 +1,9 @@
-import { renderWithStore } from '@test-utils';
+import { render } from '@test-utils';
 import { Dashboard } from '../Dashboard';
 
 describe('Dashboard', () => {
     it('should render properly', () => {
-        const { container } = renderWithStore(<Dashboard />);
+        const { container } = render(<Dashboard />);
         expect(container).toMatchSnapshot();
     });
 });
