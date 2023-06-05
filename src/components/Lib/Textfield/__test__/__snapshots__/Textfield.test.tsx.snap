@@ -1,18 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Textfield should render properly 1`] = `
-.c0 {
-  position: relative;
-}
-
 .c2 {
   position: absolute;
   font-size: 1rem;
   left: 0;
   top: 50%;
-  transform: translateY(-50%);
-  background-color: white;
-  color: gray;
+  background-color: transparent;
+  color: #212529;
   padding: 0 0.3rem;
   margin: 0 0.5rem;
   transition: 0.1s ease-out;
@@ -23,11 +18,12 @@ exports[`Textfield should render properly 1`] = `
 .c1 {
   font-size: 1rem;
   outline: none;
-  border: 1px solid gray;
+  border: 1px solid #6c757d;
   border-radius: 5px;
   padding: 0.5rem 0.7rem;
-  color: gray;
+  color: #6c757d;
   transition: 0.1s ease-out;
+  box-sizing: border-box;
 }
 
 .c1:focus {
@@ -43,6 +39,10 @@ exports[`Textfield should render properly 1`] = `
 .c1:not(:placeholder-shown)+label {
   top: 0;
   transform: translateY(-50%) scale(0.9);
+}
+
+.c0 {
+  position: relative;
 }
 
 <div>

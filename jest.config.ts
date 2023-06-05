@@ -39,6 +39,8 @@ export default {
         '^@theme(.*)$': '<rootDir>/src/theme$1',
         '^@utils(.*)$': '<rootDir>/src/utils$1',
         '^@pages(.*)$': '<rootDir>/src/pages$1',
+        '^@context(.*)$': '<rootDir>/src/contextApi$1',
+        '^@hooks(.*)$': '<rootDir>/src/hooks$1',
         '^@routes(.*)$': '<rootDir>/src/routes$1',
         '^@constant(.*)$': '<rootDir>/src/constant$1',
     },

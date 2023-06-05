@@ -1,0 +1,181 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoItem should render properly 1`] = `
+.c0 {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  user-select: none;
+  padding: 0.65rem 0;
+  text-align: left;
+}
+
+.c0 :first-child {
+  padding-top: 0;
+}
+
+.c0 :last-child {
+  padding-bottom: 0;
+}
+
+.c0 .task-item-infos {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  margin-right: 1rem;
+}
+
+.c0 .task-item-checkbox {
+  flex-shrink: 0;
+  margin: 0;
+  margin-right: 0.75rem;
+  line-height: 0;
+  cursor: pointer;
+}
+
+.c0 .task-item-checkbox input {
+  display: none;
+}
+
+.c0 .task-item-checkbox-el {
+  position: relative;
+  display: inline-flex;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.c0 .task-item-checkbox-el:hover {
+  border-color: #999;
+}
+
+.c0 .task-item-checkbox-el::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 7px;
+  height: 12px;
+  border-style: solid;
+  border-color: white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(65deg);
+  transition: 0.3s;
+}
+
+.c0 .task-item-checkbox input:checked+.task-item-checkbox-el {
+  background-color: #6bffa0;
+  border-color: #6bffa0;
+}
+
+.c0 .task-item-checkbox input:checked+.task-item-checkbox-el::before {
+  transform: rotate(45deg);
+}
+
+.c0 .task-item-text {
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+.c0 .task-item.done .task-item-text {
+  color: #ccc;
+}
+
+.c0 .task-item .task-item-text::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  max-width: 0;
+  height: 1px;
+  background-color: #999;
+  transition: 0.3s 0.1s;
+}
+
+.c0 .task-item.done .task-item-text::before {
+  max-width: 100%;
+}
+
+.c0 .task-item-remove {
+  flex-shrink: 0;
+  line-height: 0;
+  transition: 0.2s ease;
+  opacity: 0;
+}
+
+.c0 .task-item:hover .task-item-remove {
+  opacity: 1;
+}
+
+.c0 .task-item-remove button {
+  border-radius: 50%;
+  color: #ccc;
+  transition: 0.2s ease;
+}
+
+.c0 .task-item-remove button:hover {
+  color: tomato;
+}
+
+<div>
+  <li
+    class="c0 task-item"
+  >
+    <div
+      class="task-item-infos"
+    >
+      <label
+        class="task-item-checkbox"
+      >
+        <input
+          type="checkbox"
+        />
+        <div
+          class="task-item-checkbox-el"
+        />
+      </label>
+      <div
+        class="task-item-text"
+      />
+    </div>
+    <div
+      class="task-item-remove"
+    >
+      <button
+        title="Remover item"
+      >
+        <svg
+          height="21"
+          viewBox="0 0 21 21"
+          width="21"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            fill="none"
+            fill-rule="evenodd"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            transform="translate(5 5)"
+          >
+            <path
+              d="m10.5 10.5-10-10z"
+            />
+            <path
+              d="m10.5.5-10 10"
+            />
+          </g>
+        </svg>
+      </button>
+    </div>
+  </li>
+</div>
+`;

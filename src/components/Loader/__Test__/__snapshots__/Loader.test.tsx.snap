@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ContainerLoader should render properly 1`] = `
+exports[`Loader should render properly 1`] = `
 .c0 {
   width: 10rem;
   height: auto;

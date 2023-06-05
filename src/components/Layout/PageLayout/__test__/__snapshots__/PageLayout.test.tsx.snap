@@ -10,7 +10,7 @@ exports[`PageLayout component should render properly 1`] = `
 
 .c0 {
   display: grid;
-  height: 100%;
+  height: 100vh;
   width: 100vw;
   grid-template-areas: 'header' 'main';
   grid-template-columns: 1fr;
@@ -20,7 +20,7 @@ exports[`PageLayout component should render properly 1`] = `
 
 .c0>div {
   padding: 0;
-  margin: 2rem;
+  margin: 2rem 0;
 }
 
 .c0>header {
