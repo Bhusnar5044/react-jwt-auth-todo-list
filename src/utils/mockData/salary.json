@@ -1,0 +1,30 @@
+{
+    "name": "income",
+    "value": 820000,
+    "children": [
+        {
+            "name": "budget",
+            "value": 104000,
+            "children": [
+                {
+                    "name": "rent & bills",
+                    "value": 15500,
+                    "children": [
+                        {
+                            "name": "rent",
+                            "value": 11000
+                        },
+                        {
+                            "name": "Laundry",
+                            "value": 500
+                        },
+                        {
+                            "name": "gas, water & electricity",
+                            "value": 1000
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
