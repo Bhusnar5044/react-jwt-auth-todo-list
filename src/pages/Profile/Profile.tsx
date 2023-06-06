@@ -1,11 +1,14 @@
 import { Box, Text } from '@components/Lib';
 import { useAuth } from '@context/AuthProvider';
-import { FC, memo } from 'react';
+import { FC, memo, useEffect } from 'react';
 import { CardBox, StyledAvatar } from './styled';
 
 export const Profile: FC = memo(() => {
-    const { profileInfo } = useAuth();
-    console.log(profileInfo);
+    const { profileInfo, fetchProfileDetails } = useAuth();
+
+    useEffect(() => {
+        if (!profileInfo?.email) fetchProfileDetails?.();
+    }, [fetchProfileDetails, profileInfo?.email]);
     return (
         <>
             <Box display="flex" flexDirection="column" gap="2rem" justifyContent="center">
