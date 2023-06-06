@@ -28,9 +28,12 @@ export const Logo = styled.img`
     height: auto;
 `;
 
-export const StyledLink = styled(NavLink)`
+export const StyledLink = styled(NavLink)<{ activeClassName?: string }>`
     color: #fff;
     :hover {
+        color: ${theme.colors.info.main};
+    }
+    &.active {
         color: ${theme.colors.info.main};
     }
 `;

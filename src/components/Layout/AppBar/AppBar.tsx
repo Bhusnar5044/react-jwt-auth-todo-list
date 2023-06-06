@@ -15,19 +15,20 @@ export const AppBar: FC = memo(() => {
                     <Logo src="/vite.svg" />
                     <Text>React JWT Demo</Text>
                 </Box>
-                <Box gap="2rem" alignItems="center">
-                    <StyledLink to={'/'}>
-                        <Text>Dashboard</Text>
-                    </StyledLink>
-                    <StyledLink to={'/profile'}>
-                        <Text>Profile</Text>
-                    </StyledLink>
-                    {tokens?.access_token && (
+                {tokens?.access_token && (
+                    <Box gap="2rem" alignItems="center">
+                        <StyledLink to={'/'} activeClassName={location.pathname === `/` ? 'active' : ''}>
+                            <Text>Dashboard</Text>
+                        </StyledLink>
+                        <StyledLink to={'/profile'} activeClassName={location.pathname === `/profile` ? 'active' : ''}>
+                            <Text>Profile</Text>
+                        </StyledLink>
+
                         <Text as={'a'} onClick={handleLogout}>
                             Logout
                         </Text>
-                    )}
-                </Box>
+                    </Box>
+                )}
             </HeaderContent>
         </HeaderContainer>
     );

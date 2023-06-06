@@ -2,6 +2,7 @@ import { Box, Button, Text, Textfield } from '@Lib';
 import { PageLayout } from '@components/Layout';
 import { AppBar } from '@components/Layout/AppBar/AppBar';
 import { useAuth } from '@context/AuthProvider';
+import { theme } from '@theme';
 import { fetch } from '@utils';
 import { ChangeEvent, FC, memo, useCallback, useEffect, useState } from 'react';
 import { StyledBox } from './styled';
@@ -23,22 +24,22 @@ export const Auth: FC = memo(() => {
         const config = {
             url: 'https://api.escuelajs.co/api/v1/auth/login',
             data: {
-                email: 'john@mail.com',
-                password: 'changeme',
+                email: username,
+                password: pass,
             },
             method: 'POST',
         };
-
-        if (username && pass) {
-            setIsLoading(true);
-            const { response, error } = await fetch(config);
-            if (response) {
-                console.log(response.data);
-                return login?.({ tokens: response.data });
-            }
-            if (error) setError(error.data.message);
-            setIsLoading(false);
-        } else setError('Please enter valid email and password');
+        setIsLoading(true);
+        const { response, error } = await fetch(config);
+        if (response) {
+            console.log(response.data);
+            return login?.({ tokens: response.data });
+        }
+        if (error) {
+            console.log(error.data.message);
+            setError('Please enter valid email and password');
+        }
+        setIsLoading(false);
     }, [login, pass, username]);
 
     useEffect(() => {
@@ -53,7 +54,7 @@ export const Auth: FC = memo(() => {
                     Auth Page
                 </Text>
                 <StyledBox flexDirection="column" gap="3rem" justifyContent="center" alignItems="center">
-                    <Text textVariant="h4" textWeight="Strong">
+                    <Text textColor="#fff" textVariant="h4" textWeight="Strong">
                         Login
                     </Text>
                     <Textfield
@@ -72,10 +73,10 @@ export const Auth: FC = memo(() => {
                         value={pass}
                         onChange={onChange}
                     />
-                    <Button onClick={handleSubmit} disabled={isDisabled} loading={isLoading}>
+                    <Button onClick={handleSubmit} textVariant="button2" disabled={isDisabled} loading={isLoading}>
                         Login
                     </Button>
-                    <Text>{error}</Text>
+                    <Text textColor={theme.colors.error.main}>{error}</Text>
                 </StyledBox>
             </Box>
         </PageLayout>
