@@ -45,14 +45,6 @@ exports[`AppBar should render properly 1`] = `
   height: auto;
 }
 
-.c5 {
-  color: #fff;
-}
-
-.c5 :hover {
-  color: #495057;
-}
-
 <div>
   <header
     class="c0"
@@ -76,37 +68,6 @@ exports[`AppBar should render properly 1`] = `
         >
           React JWT Demo
         </span>
-      </div>
-      <div
-        alignitems="center"
-        class="c2"
-        gap="2rem"
-      >
-        <a
-          aria-current="page"
-          class="c5 active"
-          href="/"
-        >
-          <span
-            class="c4"
-            textalign="initial"
-            textcolor="inherit"
-          >
-            Dashboard
-          </span>
-        </a>
-        <a
-          class="c5"
-          href="/profile"
-        >
-          <span
-            class="c4"
-            textalign="initial"
-            textcolor="inherit"
-          >
-            Profile
-          </span>
-        </a>
       </div>
     </div>
   </header>

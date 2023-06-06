@@ -1,21 +1,113 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TodoItem should render properly 1`] = `
+.c1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.c3 {
+  display: flex;
+  gap: 4rem;
+}
+
+.c4 {
+  position: relative;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  border: unset;
+  padding: 1rem 2rem;
+  color: #fff;
+  background: #008085;
+  border-radius: 0.8rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px,rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
+  opacity: 1;
+}
+
+.c4:hover {
+  background: #4caf50;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.c4.loading {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.c4.loading::after {
+  content: '';
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 0.4rem solid transparent;
+  border-top-color: #1565c0;
+  border-right-color: #1565c0;
+  border-radius: 50%;
+  animation: gNWkkb 1s ease infinite;
+}
+
+.c7 {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+  color: #212529;
+  font-size: 2rem;
+}
+
+.c7:hover {
+  color: #495057;
+  background-color: transparent;
+  box-shadow: unset;
+}
+
+.c8 {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  box-shadow: none;
+  opacity: 0;
+  color: #212529;
+  transition: 0.2s ease;
+  margin-right: 1rem;
+}
+
+.c8:hover {
+  color: #495057;
+}
+
+.c5 {
+  font-size: 0.8em;
+  line-height: 1.4rem;
+  padding: 0.5rem;
+}
+
 .c0 {
   display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   width: 100%;
   align-items: center;
   user-select: none;
-  padding: 0.65rem 0;
+  padding: 0.65rem 0.5rem;
   text-align: left;
-}
-
-.c0 :first-child {
-  padding-top: 0;
-}
-
-.c0 :last-child {
-  padding-bottom: 0;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .c0 .task-item-infos {
@@ -84,11 +176,11 @@ exports[`TodoItem should render properly 1`] = `
   transition: 0.3s ease;
 }
 
-.c0 .task-item.done .task-item-text {
+.c0.task-item.done .task-item-text {
   color: #ccc;
 }
 
-.c0 .task-item .task-item-text::before {
+.c0.task-item .task-item-text::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -104,25 +196,12 @@ exports[`TodoItem should render properly 1`] = `
   max-width: 100%;
 }
 
-.c0 .task-item-remove {
-  flex-shrink: 0;
-  line-height: 0;
-  transition: 0.2s ease;
-  opacity: 0;
-}
-
-.c0 .task-item:hover .task-item-remove {
+.c0:hover .c6 {
   opacity: 1;
 }
 
-.c0 .task-item-remove button {
-  border-radius: 50%;
-  color: #ccc;
-  transition: 0.2s ease;
-}
-
-.c0 .task-item-remove button:hover {
-  color: tomato;
+.c2 {
+  width: 100%;
 }
 
 <div>
@@ -130,51 +209,65 @@ exports[`TodoItem should render properly 1`] = `
     class="c0 task-item"
   >
     <div
-      class="task-item-infos"
+      class="c1 c2"
+      justifycontent="space-between"
     >
-      <label
-        class="task-item-checkbox"
-      >
-        <input
-          type="checkbox"
-        />
-        <div
-          class="task-item-checkbox-el"
-        />
-      </label>
       <div
-        class="task-item-text"
-      />
-    </div>
-    <div
-      class="task-item-remove"
-    >
-      <button
-        title="Remover item"
+        class="task-item-infos"
       >
-        <svg
-          height="21"
-          viewBox="0 0 21 21"
-          width="21"
-          xmlns="http://www.w3.org/2000/svg"
+        <label
+          class="task-item-checkbox"
         >
-          <g
-            fill="none"
-            fill-rule="evenodd"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            transform="translate(5 5)"
+          <input
+            type="checkbox"
+          />
+          <div
+            class="task-item-checkbox-el"
+          />
+        </label>
+        <div
+          class="task-item-text"
+        />
+      </div>
+      <div
+        class="c3"
+        gap="4rem"
+      >
+        <button
+          class="c4 c5"
+          type="button"
+        >
+          Show subtasks
+        </button>
+        <button
+          class="c4 c6 c7 c8"
+          title="Remover item"
+          type="button"
+        >
+          <svg
+            height="21"
+            viewBox="0 0 21 21"
+            width="21"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              d="m10.5 10.5-10-10z"
-            />
-            <path
-              d="m10.5.5-10 10"
-            />
-          </g>
-        </svg>
-      </button>
+            <g
+              fill="none"
+              fill-rule="evenodd"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              transform="translate(5 5)"
+            >
+              <path
+                d="m10.5 10.5-10-10z"
+              />
+              <path
+                d="m10.5.5-10 10"
+              />
+            </g>
+          </svg>
+        </button>
+      </div>
     </div>
   </li>
 </div>
