@@ -1,5 +1,6 @@
 import { theme } from '@theme';
 import { styled } from '@utils';
+import Box from '../Box';
 import { InputWrapperProps } from './types';
 
 export const Label = styled.label`
@@ -61,7 +62,7 @@ export const InputWrapper = styled.label<InputWrapperProps>`
     overflow: hidden;
     width: ${({ fullWidth }) => fullWidth && '100%'};
     min-width: ${({ minWidth }) => minWidth};
-
+    ${({ errorText, isValid }) => (errorText || !isValid ? `border: 1px solid ${theme.colors.error.light};` : '')}
     .focus-bg {
         position: absolute;
         top: 0;
@@ -78,4 +79,9 @@ export const InputWrapper = styled.label<InputWrapperProps>`
         width: ${({ fullWidth }) => fullWidth && '100%'};
         min-width: ${({ minWidth }) => minWidth};
     }
+`;
+
+export const Wrapper = styled(Box)<InputWrapperProps>`
+    width: ${({ fullWidth }) => fullWidth && '100%'};
+    min-width: ${({ minWidth }) => minWidth};
 `;
