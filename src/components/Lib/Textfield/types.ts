@@ -1,6 +1,7 @@
 import { ChangeEvent } from 'react';
 
 export interface InputWrapperProps {
+    for?: string;
     fullWidth?: boolean;
     minWidth?: string;
 }
