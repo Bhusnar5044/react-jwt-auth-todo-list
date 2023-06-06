@@ -4,9 +4,9 @@ import { AppBar } from '@components/Layout/AppBar/AppBar';
 import { urls } from '@constant/urls';
 import { useAuth } from '@context/AuthProvider';
 import { theme } from '@theme';
-import { fetch } from '@utils';
+import { emailValidator, fetch } from '@utils';
 import { ChangeEvent, FC, memo, useCallback, useEffect, useState } from 'react';
-import { StyledBox } from './styled';
+import { StyledBox, StyledForm } from './styled';
 
 export const Auth: FC = memo(() => {
     const [username, setUsername] = useState('');
@@ -59,26 +59,31 @@ export const Auth: FC = memo(() => {
                     <Text textColor="#fff" textVariant="h4" textWeight="Strong">
                         Login
                     </Text>
-                    <Textfield
-                        fullWidth
-                        type="text"
-                        label="Username"
-                        name="username"
-                        value={username}
-                        onChange={onChange}
-                    />
-                    <Textfield
-                        fullWidth
-                        type="password"
-                        label="Password"
-                        name="pass"
-                        value={pass}
-                        onChange={onChange}
-                    />
-                    <Button onClick={handleSubmit} disabled={isDisabled} loading={isLoading}>
-                        Login
-                    </Button>
-                    <Text textColor={theme.colors.error.light}>{error}</Text>
+                    <StyledForm>
+                        <Textfield
+                            fullWidth
+                            type="text"
+                            label="Username"
+                            name="username"
+                            value={username}
+                            onChange={onChange}
+                            required
+                            validator={emailValidator}
+                        />
+                        <Textfield
+                            fullWidth
+                            type="password"
+                            label="Password"
+                            name="pass"
+                            value={pass}
+                            onChange={onChange}
+                            required
+                        />
+                        <Button type="submit" onClick={handleSubmit} disabled={isDisabled} loading={isLoading}>
+                            Submit
+                        </Button>
+                        <Text textColor={theme.colors.error.light}>{error}</Text>
+                    </StyledForm>
                 </StyledBox>
             </Box>
         </PageLayout>

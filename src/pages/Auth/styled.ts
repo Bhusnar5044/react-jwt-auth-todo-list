@@ -13,3 +13,11 @@ export const StyledBox = styled(Box)`
         width: 40%;
     }
 `;
+
+export const StyledForm = styled.form`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+`;
