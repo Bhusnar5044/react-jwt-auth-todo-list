@@ -1,6 +1,7 @@
 import { Box, Button, Text, Textfield } from '@Lib';
 import { PageLayout } from '@components/Layout';
 import { AppBar } from '@components/Layout/AppBar/AppBar';
+import { urls } from '@constant/urls';
 import { useAuth } from '@context/AuthProvider';
 import { theme } from '@theme';
 import { fetch } from '@utils';
@@ -22,23 +23,24 @@ export const Auth: FC = memo(() => {
     const handleSubmit = useCallback(async () => {
         // mock API fixed email pass
         const config = {
-            url: 'https://api.escuelajs.co/api/v1/auth/login',
+            url: urls.login,
             data: {
                 email: username,
                 password: pass,
             },
             method: 'POST',
         };
+
         setIsLoading(true);
-        const { response, error } = await fetch(config);
-        if (response) {
-            console.log(response.data);
-            return login?.({ tokens: response.data });
-        }
+
+        const { response, error } = await fetch(config, '', true);
+
+        if (response) return login?.({ tokens: response.data });
         if (error) {
             console.log(error.data.message);
             setError('Please enter valid email and password');
         }
+
         setIsLoading(false);
     }, [login, pass, username]);
 
