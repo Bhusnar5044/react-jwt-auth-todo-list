@@ -1,4 +1,5 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
+import { loadState } from './localStorage';
 
 export interface AxiosReturn {
     response?: AxiosResponse<any>;
@@ -10,6 +11,7 @@ export async function fetch(
     token?: string,
     noAuthorization?: boolean,
 ): Promise<AxiosReturn> {
+    const { tokens = {} } = loadState('user') || {};
     try {
         const request = {
             ...config,
@@ -19,7 +21,7 @@ export async function fetch(
                     ? {
                           Accept: 'application/json',
                           'Content-Type': 'application/json',
-                          Authorization: `Bearer ${token}`,
+                          Authorization: `Bearer ${token || tokens?.access_token}`,
                       }
                     : {}),
             },

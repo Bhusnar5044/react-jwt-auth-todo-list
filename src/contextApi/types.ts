@@ -3,6 +3,7 @@ export type IAuthContext = {
     profileInfo: { [key: string]: string };
     login?: (data: any) => void;
     logout?: () => void;
+    fetchProfileDetails?: () => void;
 };
 
 export type ITodo = {
