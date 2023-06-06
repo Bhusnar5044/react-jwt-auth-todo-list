@@ -4,3 +4,9 @@ export type IAuthContext = {
     login?: (data: any) => void;
     logout?: () => void;
 };
+
+export type ITodo = {
+    text: string;
+    done: boolean;
+};
+export type ITodoContext = { todo?: ITodo[]; setTodo?: React.Dispatch<React.SetStateAction<ITodo[]>> };

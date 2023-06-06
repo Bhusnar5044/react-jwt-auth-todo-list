@@ -1,5 +1,5 @@
 import { useLocalStorage } from '@hooks/useLocalStorage';
-import { FC, PropsWithChildren, createContext, useContext, useMemo } from 'react';
+import { FC, PropsWithChildren, createContext, useCallback, useContext, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { IAuthContext } from './types';
 
@@ -11,16 +11,19 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
     const [user, setUser] = useLocalStorage('user', initialValue);
     const navigate = useNavigate();
 
-    const login = async (data: any) => {
-        console.log({ data });
-        setUser(data);
-        navigate('/profile', { replace: true });
-    };
+    const login = useCallback(
+        async (data: any) => {
+            console.log({ data });
+            setUser(data);
+            navigate('/', { replace: true });
+        },
+        [navigate, setUser],
+    );
 
-    const logout = () => {
+    const logout = useCallback(() => {
         setUser(null);
         navigate('/', { replace: true });
-    };
+    }, [navigate, setUser]);
 
     const value = useMemo(
         () => ({
@@ -28,7 +31,7 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
             login,
             logout,
         }),
-        [user],
+        [login, logout, user],
     );
 
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

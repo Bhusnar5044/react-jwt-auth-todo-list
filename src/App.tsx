@@ -1,5 +1,6 @@
 import { ErrorBoundary } from '@components/Layout';
 import { AuthProvider } from '@context/AuthProvider';
+import { TodoContextProvider } from '@context/TodoProvider';
 import { Routes } from '@routes';
 import { theme } from '@theme';
 import { ThemeProvider } from '@utils';
@@ -11,9 +12,11 @@ const App: FC = () => {
         <ThemeProvider theme={theme}>
             <BrowserRouter>
                 <AuthProvider>
-                    <ErrorBoundary>
-                        <Routes />
-                    </ErrorBoundary>
+                    <TodoContextProvider>
+                        <ErrorBoundary>
+                            <Routes />
+                        </ErrorBoundary>
+                    </TodoContextProvider>
                 </AuthProvider>
             </BrowserRouter>
         </ThemeProvider>
