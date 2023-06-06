@@ -6,22 +6,6 @@ export const StyledContainer = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
-    button {
-        background: none;
-        border: none;
-        padding: 0;
-        margin: 0;
-        outline: none;
-        box-shadow: none;
-        cursor: pointer;
-    }
-
-    img,
-    svg {
-        display: block;
-        margin: 0;
-        max-width: 100%;
-    }
 `;
 
 export const TodoContainer = styled.div`
@@ -56,6 +40,12 @@ export const StyledInput = styled.input`
 `;
 
 export const StyledButton = styled(Button)`
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-shadow: none;
     background-color: transparent;
     color: ${theme.colors.info.dark};
     font-size: 2rem;
@@ -79,7 +69,7 @@ export const TodoForm = styled.div`
 
 export const TodoBody = styled.div`
     position: relative;
-    padding: 2rem 2.5rem;
-    height: 420px;
+    padding: 2rem 1.5rem;
+    height: fit-content;
     overflow: auto;
 `;

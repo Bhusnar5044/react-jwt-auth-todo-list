@@ -9,5 +9,6 @@ export type IAuthContext = {
 export type ITodo = {
     text: string;
     done: boolean;
+    todo?: ITodo[];
 };
 export type ITodoContext = { todo?: ITodo[]; setTodo?: React.Dispatch<React.SetStateAction<ITodo[]>> };

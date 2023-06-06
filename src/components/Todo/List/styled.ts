@@ -14,6 +14,9 @@ export const StyledEmpty = styled.div`
 `;
 
 export const StyledList = styled.ul`
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     list-style: none;
     margin: 0;
     padding: 0;

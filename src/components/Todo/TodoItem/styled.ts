@@ -1,20 +1,40 @@
+import { Box, Button } from '@components/Lib';
 import { theme } from '@theme';
 import { styled } from '@utils';
+import { StyledButton } from '../styled';
+
+export const RemoveButton = styled(StyledButton)`
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-shadow: none;
+    opacity: 0;
+    color: ${theme.colors.info.dark};
+    transition: 0.2s ease;
+    margin-right: 1rem;
+    &:hover {
+        color: ${theme.colors.info.main};
+    }
+`;
+
+export const AddSUbTaskButton = styled(Button)`
+    font-size: 0.8em;
+    line-height: 1.4rem;
+    padding: 0.5rem;
+`;
 
 export const StyledItem = styled.li`
     display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     width: 100%;
     align-items: center;
     user-select: none;
-    padding: 0.65rem 0;
+    padding: 0.65rem 0.5rem;
     text-align: left;
-
-    &:first-child {
-        padding-top: 0;
-    }
-    &:last-child {
-        padding-bottom: 0;
-    }
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
     .task-item-infos {
         flex: 1;
@@ -90,21 +110,12 @@ export const StyledItem = styled.li`
     .task-item.done .task-item-text::before {
         max-width: 100%;
     }
-    .task-item-remove {
-        flex-shrink: 0;
-        line-height: 0;
-        transition: 0.2s ease;
-        opacity: 0;
-    }
-    &.task-item:hover .task-item-remove {
+
+    &:hover ${RemoveButton} {
         opacity: 1;
     }
-    .task-item-remove button {
-        border-radius: 50%;
-        color: ${theme.colors.info.dark};
-        transition: 0.2s ease;
-    }
-    .task-item-remove button:hover {
-        color: ${theme.colors.info.main};
-    }
+`;
+
+export const StyledItemWrapper = styled(Box)`
+    width: 100%;
 `;
