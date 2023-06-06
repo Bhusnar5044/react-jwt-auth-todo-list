@@ -48,7 +48,7 @@ export const StyledInput = styled.input`
     outline: none;
     color: ${theme.colors.info.main};
     height: 2rem;
-    width: 90%;
+    width: 90.8%;
     border: none;
     font-size: 1.4rem;
     font-weight: 700;
@@ -58,8 +58,11 @@ export const StyledInput = styled.input`
 export const StyledButton = styled(Button)`
     background-color: transparent;
     color: ${theme.colors.info.dark};
-    :hover {
+    font-size: 2rem;
+    &:hover {
         color: ${theme.colors.info.main};
+        background-color: transparent;
+        box-shadow: unset;
     }
 `;
 
@@ -76,7 +79,7 @@ export const TodoForm = styled.div`
 
 export const TodoBody = styled.div`
     position: relative;
-    padding: 2rem 1.5rem;
+    padding: 2rem 2.5rem;
     height: 420px;
     overflow: auto;
 `;

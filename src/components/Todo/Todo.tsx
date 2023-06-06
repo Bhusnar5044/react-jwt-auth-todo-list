@@ -60,9 +60,7 @@ export const Todo: FC = memo(() => {
                 </TodoHeader>
                 <TodoForm className="todo-form">
                     <StyledInput ref={addTaskInput} type="text" placeholder="Add task..." onKeyUp={handleKey} />
-                    <StyledButton onClick={addTask}>
-                        <Text textVariant="h4">+</Text>
-                    </StyledButton>
+                    <StyledButton onClick={addTask}>+</StyledButton>
                 </TodoForm>
                 <TodoBody className="todo-body">
                     <List />

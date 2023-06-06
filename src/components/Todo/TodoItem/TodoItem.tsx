@@ -1,5 +1,6 @@
 import { useTodoContext } from '@context/TodoProvider';
 import { FC, memo } from 'react';
+import { StyledButton } from '../styled';
 import { StyledItem } from './styled';
 import { Props } from './types';
 
@@ -39,7 +40,7 @@ export const TodoItem: FC<Props> = memo(({ taskId, task }) => {
                 <div className={prefixClass + '-text'}>{task.text}</div>
             </div>
             <div className={prefixClass + '-remove'}>
-                <button onClick={removeTask} title="Remover item">
+                <StyledButton onClick={removeTask} title="Remover item">
                     <svg height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg">
                         <g
                             fill="none"
@@ -52,7 +53,7 @@ export const TodoItem: FC<Props> = memo(({ taskId, task }) => {
                             <path d="m10.5.5-10 10" />
                         </g>
                     </svg>
-                </button>
+                </StyledButton>
             </div>
         </StyledItem>
     );

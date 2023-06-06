@@ -75,10 +75,10 @@ export const Auth: FC = memo(() => {
                         value={pass}
                         onChange={onChange}
                     />
-                    <Button onClick={handleSubmit} textVariant="button2" disabled={isDisabled} loading={isLoading}>
+                    <Button onClick={handleSubmit} disabled={isDisabled} loading={isLoading}>
                         Login
                     </Button>
-                    <Text textColor={theme.colors.error.main}>{error}</Text>
+                    <Text textColor={theme.colors.error.light}>{error}</Text>
                 </StyledBox>
             </Box>
         </PageLayout>

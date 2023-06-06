@@ -1,3 +1,4 @@
+import { theme } from '@theme';
 import { styled } from '@utils';
 
 export const StyledItem = styled.li`
@@ -8,12 +9,13 @@ export const StyledItem = styled.li`
     padding: 0.65rem 0;
     text-align: left;
 
-    :first-child {
+    &:first-child {
         padding-top: 0;
     }
-    :last-child {
+    &:last-child {
         padding-bottom: 0;
     }
+
     .task-item-infos {
         flex: 1;
         display: flex;
@@ -71,10 +73,10 @@ export const StyledItem = styled.li`
         font-weight: 700;
         transition: 0.3s ease;
     }
-    .task-item.done .task-item-text {
+    &.task-item.done .task-item-text {
         color: #ccc;
     }
-    .task-item .task-item-text::before {
+    &.task-item .task-item-text::before {
         content: '';
         position: absolute;
         top: 50%;
@@ -94,15 +96,15 @@ export const StyledItem = styled.li`
         transition: 0.2s ease;
         opacity: 0;
     }
-    .task-item:hover .task-item-remove {
+    &.task-item:hover .task-item-remove {
         opacity: 1;
     }
     .task-item-remove button {
         border-radius: 50%;
-        color: #ccc;
+        color: ${theme.colors.info.dark};
         transition: 0.2s ease;
     }
     .task-item-remove button:hover {
-        color: tomato;
+        color: ${theme.colors.info.main};
     }
 `;
