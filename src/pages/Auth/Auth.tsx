@@ -55,10 +55,7 @@ export const Auth: FC = memo(() => {
     return (
         <PageLayout>
             <AppBar />
-            <Box flexDirection="column" gap="2rem" justifyContent="center" alignItems="center">
-                <Text textVariant="h3" textWeight="Medium">
-                    Auth Page
-                </Text>
+            <Box justifyContent="center" alignItems="center">
                 <StyledBox flexDirection="column" gap="3rem" justifyContent="center" alignItems="center">
                     <Text textColor="#fff" textVariant="h4" textWeight="Strong">
                         Login
