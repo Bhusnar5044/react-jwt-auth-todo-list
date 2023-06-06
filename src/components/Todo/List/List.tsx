@@ -1,14 +1,15 @@
+import { useTodoContext } from '@context/TodoProvider';
 import { FC, memo } from 'react';
 import { TodoItem } from '../TodoItem/TodoItem';
 import { StyledEmpty, StyledList } from './styled';
-import { Props } from './types';
 
-export const List: FC<Props> = memo(({ tasks, setTasks }) => {
-    if (tasks.length > 0) {
+export const List: FC = memo(() => {
+    const { todo: tasks } = useTodoContext();
+    if (tasks?.length) {
         return (
             <StyledList className="todo-list">
                 {tasks.map((task, taskIndex) => {
-                    return <TodoItem key={taskIndex} taskId={taskIndex} task={task} setTasks={setTasks} />;
+                    return <TodoItem key={taskIndex} taskId={taskIndex} task={task} />;
                 })}
             </StyledList>
         );

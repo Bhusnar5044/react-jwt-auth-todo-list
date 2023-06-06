@@ -1,7 +1,6 @@
-import { Task } from '../List/types';
+import { ITodo } from '@context/types';
 
 export type Props = {
     taskId: number;
-    task: Task;
-    setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
+    task: ITodo;
 };

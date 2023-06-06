@@ -1,17 +1,19 @@
+import { useTodoContext } from '@context/TodoProvider';
 import { FC, memo } from 'react';
 import { StyledItem } from './styled';
 import { Props } from './types';
 
-export const TodoItem: FC<Props> = memo(({ taskId, task, setTasks }) => {
+export const TodoItem: FC<Props> = memo(({ taskId, task }) => {
+    const { setTodo: setTasks } = useTodoContext();
     function removeTask() {
-        setTasks((tasks) => {
+        setTasks?.((tasks) => {
             return tasks.filter((_, taskIndex) => taskIndex !== taskId);
         });
     }
 
     function toggleTask() {
         const doneStatus = !task.done;
-        setTasks((tasks) => {
+        setTasks?.((tasks) => {
             return tasks.map((taskItem, taskIndex) => {
                 if (taskIndex === taskId) {
                     return {

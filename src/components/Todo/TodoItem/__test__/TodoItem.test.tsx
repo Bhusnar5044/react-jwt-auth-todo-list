@@ -10,7 +10,6 @@ describe('TodoItem', () => {
                     text: '',
                     done: false,
                 }}
-                setTasks={jest.fn()}
             />,
         );
         expect(container).toMatchSnapshot();

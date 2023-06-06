@@ -1,47 +1,27 @@
 import { Text } from '@components/Lib';
+import { useTodoContext } from '@context/TodoProvider';
 import { FC, memo, useEffect, useRef, useState } from 'react';
 import List from './List';
 import { StyledButton, StyledContainer, StyledInput, TodoBody, TodoContainer, TodoForm, TodoHeader } from './styled';
 
 export const Todo: FC = memo(() => {
-    const [tasks, setTasks] = useState([
-        {
-            text: 'Task 1',
-            done: true,
-        },
-        {
-            text: 'Task 2',
-            done: true,
-        },
-        {
-            text: 'Task 3',
-            done: false,
-        },
-        {
-            text: 'Task 4',
-            done: false,
-        },
-        {
-            text: 'Task 5',
-            done: false,
-        },
-    ]);
+    const { todo: tasks, setTodo: setTasks } = useTodoContext();
     const [remainingTasks, setRemainingTasks] = useState(0);
     const addTaskInput = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
-        setRemainingTasks(tasks.filter((taskItem) => taskItem.done === false).length);
+        setRemainingTasks(tasks?.filter((taskItem) => taskItem.done === false).length || 0);
     }, [tasks]);
 
     function addTask() {
         if (addTaskInput?.current) {
             const newTask = addTaskInput?.current.value;
-            if (newTask && !tasks.some((task) => task.text === newTask)) {
+            if (newTask && !tasks?.some((task) => task.text === newTask)) {
                 const newTaskObj = {
                     text: newTask,
                     done: false,
                 };
-                setTasks((tasks) => {
+                setTasks?.((tasks) => {
                     return [...tasks, newTaskObj];
                 });
                 addTaskInput.current.value = '';
@@ -54,7 +34,7 @@ export const Todo: FC = memo(() => {
         if (keyCode === 13) {
             addTask();
         } else if (addTaskInput?.current) {
-            if (!tasks.some((task) => task.text === target.value)) {
+            if (!tasks?.some((task) => task.text === target.value)) {
                 addTaskInput?.current.classList.remove('invalid');
             } else {
                 addTaskInput?.current.classList.add('invalid');
@@ -68,11 +48,11 @@ export const Todo: FC = memo(() => {
                 <TodoHeader className="todo-header">
                     <Text textVariant="h3">Todo List</Text>
                     <Text textVariant="h5">
-                        {tasks.length > 0 && remainingTasks === 0 ? (
+                        {tasks?.length && remainingTasks === 0 ? (
                             'All done! =D'
                         ) : (
                             <>
-                                You have <strong>{remainingTasks}</strong> of <strong>{tasks.length}</strong> tasks
+                                You have <strong>{remainingTasks}</strong> of <strong>{tasks?.length}</strong> tasks
                                 remaining
                             </>
                         )}
@@ -85,7 +65,7 @@ export const Todo: FC = memo(() => {
                     </StyledButton>
                 </TodoForm>
                 <TodoBody className="todo-body">
-                    <List tasks={tasks} setTasks={setTasks} />
+                    <List />
                 </TodoBody>
             </TodoContainer>
         </StyledContainer>
