@@ -7,14 +7,12 @@ export const ButtonContainer = styled.button<Props>`
     cursor: pointer;
     text-align: center;
     border: 0;
-    padding: 7px 16px;
-    min-height: 36px;
-    min-width: 36px;
-    color: #ffffff;
+    padding: 1rem 2rem;
+    color: #fff;
     background: #008060;
-    border-radius: 4px;
+    border-radius: 0.8rem;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 1.4rem;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
     &.disabled {
         opacity: 0.7;
