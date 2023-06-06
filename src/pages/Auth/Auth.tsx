@@ -5,7 +5,7 @@ import { urls } from '@constant/urls';
 import { useAuth } from '@context/AuthProvider';
 import { theme } from '@theme';
 import { emailValidator, fetch } from '@utils';
-import { ChangeEvent, FC, memo, useCallback, useEffect, useState } from 'react';
+import { ChangeEvent, FC, FormEvent, memo, useCallback, useEffect, useState } from 'react';
 import { StyledBox, StyledForm } from './styled';
 
 export const Auth: FC = memo(() => {
@@ -20,29 +20,33 @@ export const Auth: FC = memo(() => {
         if (name === 'username') setUsername(value);
         else setPass(value);
     }, []);
-    const handleSubmit = useCallback(async () => {
-        // mock API fixed email pass
-        const config = {
-            url: urls.login,
-            data: {
-                email: username,
-                password: pass,
-            },
-            method: 'POST',
-        };
+    const handleSubmit = useCallback(
+        async (event: FormEvent) => {
+            event.preventDefault();
+            // used mock API fixed email pass
+            const config = {
+                url: urls.login,
+                data: {
+                    email: username,
+                    password: pass,
+                },
+                method: 'POST',
+            };
 
-        setIsLoading(true);
+            setIsLoading(true);
 
-        const { response, error } = await fetch(config, '', true);
+            const { response, error } = await fetch(config, '', true);
 
-        if (response) return login?.({ tokens: response.data });
-        if (error) {
-            console.log(error.data.message);
-            setError('Please enter valid email and password');
-        }
+            if (response) return login?.({ tokens: response.data });
+            if (error) {
+                console.log(error.data.message);
+                setError('Please enter valid email and password');
+            }
 
-        setIsLoading(false);
-    }, [login, pass, username]);
+            setIsLoading(false);
+        },
+        [login, pass, username],
+    );
 
     useEffect(() => {
         if (username && pass) setIsDisabled(false);
@@ -59,7 +63,7 @@ export const Auth: FC = memo(() => {
                     <Text textColor="#fff" textVariant="h4" textWeight="Strong">
                         Login
                     </Text>
-                    <StyledForm>
+                    <StyledForm onSubmit={handleSubmit}>
                         <Textfield
                             fullWidth
                             type="text"
@@ -79,7 +83,7 @@ export const Auth: FC = memo(() => {
                             onChange={onChange}
                             required
                         />
-                        <Button type="submit" onClick={handleSubmit} disabled={isDisabled} loading={isLoading}>
+                        <Button type="submit" disabled={isDisabled} loading={isLoading}>
                             Submit
                         </Button>
                         <Text textColor={theme.colors.error.light}>{error}</Text>
